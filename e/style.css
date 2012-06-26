@@ -1,0 +1,79 @@
+/* e-Tutor is licensed under the GPL. Please see the LICENSE file for more
+   information. */
+
+SPAN.title {
+	font-weight: bold;
+	font-size: 18px;
+	font-family: Verdana, sans-serif, Helvetica;
+}
+
+SPAN.opt {
+	font-weight: bold;
+}
+
+BODY {
+	font-weight: normal;
+   	font-size: 12px;
+   	font-family: Verdana, sans-serif, Helvetica;
+   	background: white;
+   	color: black;
+}
+
+TD {
+	font-weight: normal;
+   	font-size: 11px;
+   	font-family: Verdana, sans-serif, Helvetica;
+}
+
+TD.msgbox {
+   	padding: 10px;
+}
+
+TR {
+	background: white;
+	color: black;
+}
+
+TD.header {
+	font-weight: bold;
+   	background: #f0f0f0;
+   	color: black;
+}
+
+TD.grey {
+	background: #f5f5f5;
+	color: black;
+}
+
+TD.sidebox {
+   	background: #f0f0f0;
+   	color: black;
+}
+
+TD.late {
+	background: #ffcccc;
+	color: black;
+}
+
+SELECT {
+	font-weight: normal;
+   	font-size: 11px;
+   	font-family: Verdana, sans-serif, Helvetica;
+}
+
+INPUT {
+	font-weight: normal;
+   	font-size: 11px;
+   	font-family: Verdana, sans-serif, Helvetica;
+}
+
+TEXTAREA {
+	font-weight: normal;
+   	font-size: 11px;
+   	font-family: Verdana, sans-serif, Helvetica;
+}
+
+A.hiddenlink {
+	color: #A0A0A0;
+	text-decoration: none;
+}

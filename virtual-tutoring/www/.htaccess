@@ -1,0 +1,5 @@
+<IfModule mod_php5.c>
+php_value magic_quotes_gpc Off
+php_value register_globals Off
+php_value session.save_path "/var/chroot/home/content/87/9232987/tmp"
+</IfModule>

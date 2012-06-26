@@ -1,0 +1,542 @@
+[06/06/2012 2:16 AM] - SUCCESS:IPN VERIFIED!
+[From:ipn.sandbox.paypal.com|173.0.82.126]IPN POST Vars Received By Paypal_IPN Response API:
+mc_gross=1200.00 
+protection_eligibility=Ineligible 
+item_number1= 
+payer_id=3L9CYV6AE884S 
+tax=0.00 
+payment_date=02:16:15 Jun 06, 2012 PDT 
+payment_status=Completed 
+charset=windows-1252 
+mc_shipping=0.00 
+mc_handling=0.00 
+first_name=Subodh 
+mc_fee=35.10 
+notify_version=3.4 
+custom= 
+payer_status=verified 
+business=subodh_1338802242_biz@jst-technologies.com 
+num_cart_items=1 
+mc_handling1=0.00 
+verify_sign=AUO-9ErQsB-BzgidkHXt6uKj5ktSA-F3Il60iAX.qUyaAItTiPEHUca9 
+payer_email=subodh_1331706508_per@jst-technologies.com 
+mc_shipping1=0.00 
+tax1=0.00 
+txn_id=66H46436MY059380R 
+payment_type=instant 
+last_name=Bansal 
+item_name1=new 
+receiver_email=subodh_1338802242_biz@jst-technologies.com 
+payment_fee=35.10 
+quantity1=1 
+receiver_id=KMGGU2WMMUM3W 
+txn_type=cart 
+mc_gross_1=1200.00 
+mc_currency=USD 
+residence_country=US 
+test_ipn=1 
+transaction_subject=Shopping Cartnew 
+payment_gross=1200.00 
+ipn_track_id=14f9c61c8ab27 
+IPN Response from Paypal Server:
+HTTP/1.1 200 OK
+Date: Wed, 06 Jun 2012 09:16:23 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=EIfUQL5DPz48GlhQLHClF3hIKBT5mGSuPC-0P4SXuRtrcfXmBc879YPZ0cXFxQnPgF_sUxQpPbfx50Bwn9BzYlvqujWph_r3jXUr1RZPpbjeb_3mcX_ieB3k1KarujZu1gph80%7cnWqPRRevzUdj1ZYihkQY28QTjsoibdU_KXYX19s4ra6fNSnc8t8xlOxDg_pSFmpRuipWoG%7ceFqM-0jpP902mhZcsvtqftR1Fjim2Voe-Z-X5IDk9RvW0VPu-DJjFx3GEHGHis4Kb6YgvW%7c1338974183; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 04-Jun-2022 09:16:23 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Tue, 01-Jun-2032 09:16:23 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.72.109.11.1338974183506148; path=/; expires=Fri, 30-May-42 09:16:23 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[06/06/2012 2:17 AM] - SUCCESS:IPN VERIFIED!
+[From:ipn.sandbox.paypal.com|173.0.82.126]IPN POST Vars Received By Paypal_IPN Response API:
+mc_gross=120.00 
+protection_eligibility=Ineligible 
+item_number1= 
+payer_id=3L9CYV6AE884S 
+tax=0.00 
+payment_date=02:17:46 Jun 06, 2012 PDT 
+payment_status=Completed 
+charset=windows-1252 
+mc_shipping=0.00 
+mc_handling=0.00 
+first_name=Subodh 
+mc_fee=3.78 
+notify_version=3.4 
+custom= 
+payer_status=verified 
+business=subodh_1338802242_biz@jst-technologies.com 
+num_cart_items=1 
+mc_handling1=0.00 
+verify_sign=Ar9utp6uVRtcMi.cMjONCk8eTaQkAWVGZfYzEX4njCjr0IUr0qLBAv.b 
+payer_email=subodh_1331706508_per@jst-technologies.com 
+mc_shipping1=0.00 
+tax1=0.00 
+txn_id=7TU89476TK268191W 
+payment_type=instant 
+last_name=Bansal 
+item_name1=new 
+receiver_email=subodh_1338802242_biz@jst-technologies.com 
+payment_fee=3.78 
+quantity1=1 
+receiver_id=KMGGU2WMMUM3W 
+txn_type=cart 
+mc_gross_1=120.00 
+mc_currency=USD 
+residence_country=US 
+test_ipn=1 
+transaction_subject=Shopping Cartnew 
+payment_gross=120.00 
+ipn_track_id=10bf7ecba7d70 
+IPN Response from Paypal Server:
+HTTP/1.1 200 OK
+Date: Wed, 06 Jun 2012 09:17:52 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=mamlL8PGyvTMcPJ0u8hcTrlHlTDlZZV9OR4NnmcwyhjQ1UW-If4sMwayk1Tw5WI50Ydb37hlV0Tt3GfUVSM12EpEM0CJL0nm7ZI8ISBuZU3ua9iB2SptAIB6kyy3f_h6ZPOjjW%7cGrK44fLzzybJmBKS_KtdSe7tK6gxc4mY7VniStrUrxDxrH-mhBVz3rAKQM2wZeJfoDTdSm%7c6Pywk_mA1h4z-KF4fjSop-2fpdxLX4t0d_HUXNBuEOm4K6ubVZLqqv6zbYamcHSnQtv1zm%7c1338974272; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 04-Jun-2022 09:17:52 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Tue, 01-Jun-2032 09:17:52 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.72.109.11.1338974272416604; path=/; expires=Fri, 30-May-42 09:17:52 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[06/06/2012 2:48 AM] - SUCCESS:IPN VERIFIED!
+[From:ipn.sandbox.paypal.com|173.0.82.126]IPN POST Vars Received By Paypal_IPN Response API:
+mc_gross=120.00 
+protection_eligibility=Ineligible 
+item_number1= 
+payer_id=3L9CYV6AE884S 
+tax=0.00 
+payment_date=02:48:00 Jun 06, 2012 PDT 
+payment_status=Completed 
+charset=windows-1252 
+mc_shipping=0.00 
+mc_handling=0.00 
+first_name=Subodh 
+mc_fee=3.78 
+notify_version=3.4 
+custom= 
+payer_status=verified 
+business=subodh_1338802242_biz@jst-technologies.com 
+num_cart_items=1 
+mc_handling1=0.00 
+verify_sign=AfLjhNK1BWEgQaJSsIZEBe3olmXeAZCsNL--azamnOE04KT4ZLMZiKJx 
+payer_email=subodh_1331706508_per@jst-technologies.com 
+mc_shipping1=0.00 
+tax1=0.00 
+txn_id=2RK9084461692182E 
+payment_type=instant 
+last_name=Bansal 
+item_name1=new 
+receiver_email=subodh_1338802242_biz@jst-technologies.com 
+payment_fee=3.78 
+quantity1=1 
+receiver_id=KMGGU2WMMUM3W 
+txn_type=cart 
+mc_gross_1=120.00 
+mc_currency=USD 
+residence_country=US 
+test_ipn=1 
+transaction_subject=Shopping Cartnew 
+payment_gross=120.00 
+ipn_track_id=3b990449a6e70 
+IPN Response from Paypal Server:
+HTTP/1.1 200 OK
+Date: Wed, 06 Jun 2012 09:48:04 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=JysHTZkxIKK-_K-3S1QNrAI491y5KOdGPnxk5CnlDm5cvs8vQ5gk9Qrgh6k1mq-Tits9TzGcUijWQoz1GSNqNInVozj_LTbIHRo1INujE7SkfVRULmMTEDz3Y2S1x62jY_gYIG%7cku3HqpH4j5Uy-9MwfaHZUkuGNK2Z6ewhhJYDB3bD7AilyM0GXQeaFkxFlWNj_cVYL9z6mW%7ccvd78OZlfiNw6A60iHB2NXdG2PQn15J_PKGwgExkix1YZd56hQSlBUP6RtmtvzF_nKONWG%7c1338976084; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 04-Jun-2022 09:48:04 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Tue, 01-Jun-2032 09:48:04 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.72.109.11.1338976084188961; path=/; expires=Fri, 30-May-42 09:48:04 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[06/06/2012 2:58 AM] - SUCCESS:IPN VERIFIED!
+[From:ipn.sandbox.paypal.com|173.0.82.126]IPN POST Vars Received By Paypal_IPN Response API:
+mc_gross=120.00 
+protection_eligibility=Ineligible 
+item_number1= 
+payer_id=3L9CYV6AE884S 
+tax=0.00 
+payment_date=02:58:44 Jun 06, 2012 PDT 
+payment_status=Completed 
+charset=windows-1252 
+mc_shipping=0.00 
+mc_handling=0.00 
+first_name=Subodh 
+mc_fee=3.78 
+notify_version=3.4 
+custom= 
+payer_status=verified 
+business=subodh_1338802242_biz@jst-technologies.com 
+num_cart_items=1 
+mc_handling1=0.00 
+verify_sign=AxQk9ok7a1UWy.WgEN7Ag0pels4GAJuLKo5OTbr-x0Chd-GB4rDM8LtP 
+payer_email=subodh_1331706508_per@jst-technologies.com 
+mc_shipping1=0.00 
+tax1=0.00 
+txn_id=4UB79499K1835913C 
+payment_type=instant 
+last_name=Bansal 
+item_name1=new 
+receiver_email=subodh_1338802242_biz@jst-technologies.com 
+payment_fee=3.78 
+quantity1=1 
+receiver_id=KMGGU2WMMUM3W 
+txn_type=cart 
+mc_gross_1=120.00 
+mc_currency=USD 
+residence_country=US 
+test_ipn=1 
+transaction_subject=Shopping Cartnew 
+payment_gross=120.00 
+ipn_track_id=bffe0334ce29f 
+IPN Response from Paypal Server:
+HTTP/1.1 200 OK
+Date: Wed, 06 Jun 2012 09:58:51 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=_6qFT0J9k5U2G0R5GqzjTVqevnd62erF7jdQBg6aIWD57Uxp7pNMDpTIv926S3dQzXx3Qutn5i9pPDkUtSAzxIHautlt8WvOXxD99Cd9ReDdkzbLMPgXnhZWnRagD3AJyOcsYm%7cSEU-yc0se08cQAlxS-FjCCz9XUvh4T5NhH2oJSg4CV5J6UHVudjkS_5WUq-Bz20IdF0UWG%7crEU7FH44a13drOoWhHnAtC_wgZ9CiXT8IAYFWmsTV9_ruWwDPRbv4P0ql2Tru9OkxGOPXm%7c1338976731; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 04-Jun-2022 09:58:51 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Tue, 01-Jun-2032 09:58:51 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.72.109.11.1338976731500171; path=/; expires=Fri, 30-May-42 09:58:51 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[06/07/2012 10:03 PM] - SUCCESS:IPN VERIFIED!
+[From:ipn.sandbox.paypal.com|173.0.82.126]IPN POST Vars Received By Paypal_IPN Response API:
+mc_gross=120.00 
+protection_eligibility=Ineligible 
+item_number1= 
+payer_id=9W6TWAGCGLR8C 
+tax=0.00 
+payment_date=22:03:22 Jun 07, 2012 PDT 
+payment_status=Completed 
+charset=windows-1252 
+mc_shipping=0.00 
+mc_handling=0.00 
+first_name=subodh 
+mc_fee=3.78 
+notify_version=3.4 
+custom= 
+payer_status=verified 
+business=subodh_1338802242_biz@jst-technologies.com 
+num_cart_items=1 
+mc_handling1=0.00 
+verify_sign=AuCOYv6qc6EW4R-xr9dOEL0pFrJbA1rawYEq4R9HYS9CDth-5iIfh3YK 
+payer_email=subodh_1339068436_biz@jst-technologies.com 
+mc_shipping1=0.00 
+tax1=0.00 
+txn_id=1ST16783XA417725D 
+payment_type=instant 
+payer_business_name=subodh bansal\'s Test Store 
+last_name=bansal 
+item_name1=new 
+receiver_email=subodh_1338802242_biz@jst-technologies.com 
+payment_fee=3.78 
+quantity1=1 
+receiver_id=KMGGU2WMMUM3W 
+txn_type=cart 
+mc_gross_1=120.00 
+mc_currency=USD 
+residence_country=US 
+test_ipn=1 
+transaction_subject=Shopping Cartnew 
+payment_gross=120.00 
+ipn_track_id=aa214b8280938 
+IPN Response from Paypal Server:
+HTTP/1.1 200 OK
+Date: Fri, 08 Jun 2012 05:03:26 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=Hqp_qr4vyh6I5KKaWMj97ITBPfzHckNnJlo0TE6Ml-lq8oAHU0Xv_12X1HPVV_DCApJD0f80zP66fjzibAgTGORkzMVLKsani83T7Y1tZTk-93nzuyHqMYExpG5o1XUiCWC5Y0%7cMxuagpR22_X9ypa3S7czGgzYCRAEY3JrK4PUSTOncNV19k_RTtpyUErZsOiKjMD3uMjFtG%7c0vtB33ImmKsqhKJBs0eHw4doncVv4DvTY1zeJ4e2m3PKpy47CHxVpZMeugOz8RWoEY-YoW%7c1339131806; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Mon, 06-Jun-2022 05:03:26 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Thu, 03-Jun-2032 05:03:26 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.72.109.11.1339131806470794; path=/; expires=Sun, 01-Jun-42 05:03:26 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[06/13/2012 10:03 PM] - SUCCESS:IPN VERIFIED!
+[From:ipn.sandbox.paypal.com|173.0.82.126]IPN POST Vars Received By Paypal_IPN Response API:
+mc_gross=40.00 
+protection_eligibility=Ineligible 
+item_number1= 
+payer_id=9W6TWAGCGLR8C 
+tax=0.00 
+payment_date=22:03:13 Jun 13, 2012 PDT 
+payment_status=Pending 
+charset=windows-1252 
+mc_shipping=0.00 
+mc_handling=0.00 
+first_name=subodh 
+notify_version=3.4 
+custom= 
+payer_status=verified 
+num_cart_items=1 
+mc_handling1=0.00 
+verify_sign=An5ns1Kso7MWUdW4ErQKJJJ4qi4-AEo2x1T7IOuJiDEyQ5RH7vNOXAjc 
+payer_email=subodh_1339068436_biz@jst-technologies.com 
+mc_shipping1=0.00 
+tax1=0.00 
+txn_id=78982853NS886682G 
+payment_type=instant 
+payer_business_name=subodh bansal\'s Test Store 
+last_name=bansal 
+item_name1=O_Connor_TAHG_Paper_For_Cause_and_Comrades_Book_Review 
+receiver_email=danishnadeem@gmail.com 
+quantity1=1 
+pending_reason=unilateral 
+txn_type=cart 
+mc_gross_1=40.00 
+mc_currency=USD 
+residence_country=US 
+test_ipn=1 
+transaction_subject=Shopping CartO_Connor_TAHG_Paper_For_Cause_and_Comrades_Book_Review 
+payment_gross=40.00 
+ipn_track_id=b8b054dcd9eb2 
+IPN Response from Paypal Server:
+HTTP/1.1 200 OK
+Date: Thu, 14 Jun 2012 05:03:18 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=coDkm5Jqd50UTsu_oPOMERVI3Mz3qdsqFkFipb1_uoA9Mzma7IE1rgvtlvF1sQEL57B0wxS908VOY8lrOEkR1ghIsUTmzT2Th6TVJINeYe5QMvEhD_zw19nVK23817B8x7NiD0%7cRnVHOText7oUFdvtpYbkrwfW_R8v6wxTn7Mc6EaCs2FFmeXcbgYjvKwkeg3S87RO_ScxhG%7c-0owuf-T-ig-_0kvje5q0X17NT5_U7xQtUp7EeBNEPdQUhS_5rzeikU8LkjzWaj_QBxLlG%7c1339650198; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sun, 12-Jun-2022 05:03:18 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Wed, 09-Jun-2032 05:03:18 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.72.109.11.1339650198351436; path=/; expires=Sat, 07-Jun-42 05:03:18 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[06/13/2012 10:21 PM] - SUCCESS:IPN VERIFIED!
+[From:ipn.sandbox.paypal.com|173.0.82.126]IPN POST Vars Received By Paypal_IPN Response API:
+mc_gross=10.00 
+protection_eligibility=Ineligible 
+item_number1= 
+payer_id=9W6TWAGCGLR8C 
+tax=0.00 
+payment_date=22:21:27 Jun 13, 2012 PDT 
+payment_status=Completed 
+charset=windows-1252 
+mc_shipping=0.00 
+mc_handling=0.00 
+first_name=subodh 
+mc_fee=0.59 
+notify_version=3.4 
+custom= 
+payer_status=verified 
+business=subodh_1338802242_biz@jst-technologies.com 
+num_cart_items=1 
+mc_handling1=0.00 
+verify_sign=AFcWxV21C7fd0v3bYYYRCpSSRl31AgI52KVhTDoBip5YKr.AwvpaQh4q 
+payer_email=subodh_1339068436_biz@jst-technologies.com 
+mc_shipping1=0.00 
+tax1=0.00 
+txn_id=3F345697N70274438 
+payment_type=instant 
+payer_business_name=subodh bansal\'s Test Store 
+last_name=bansal 
+item_name1=test 
+receiver_email=subodh_1338802242_biz@jst-technologies.com 
+payment_fee=0.59 
+quantity1=1 
+receiver_id=KMGGU2WMMUM3W 
+txn_type=cart 
+mc_gross_1=10.00 
+mc_currency=USD 
+residence_country=US 
+test_ipn=1 
+transaction_subject=Shopping Carttest 
+payment_gross=10.00 
+ipn_track_id=9113b96527dc 
+IPN Response from Paypal Server:
+HTTP/1.1 200 OK
+Date: Thu, 14 Jun 2012 05:21:38 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=dgSo9CJNXkkAp-xnjqmexkhwLActY8TajonWAaZEuJq8lFd0lCBa3nVWqGAHSY8ltymfuX3cZAbYd07JhHTdEy8yRRUZEpAae9SZCeQSW7cl6v2VfJm7M4giWBUbdPIOMJs9iG%7cxyZR9zD4sxEL_ko6Xb2qpXzpgLW6I27A5-rl5oIukgFHu5LZK-Rd-BZcmjWYVqRgMzeufm%7c4ykOE9W3c7DcbgqoDQT_iTzWnMYO9FCeaNs9ZUzxIGRvU9lXpo9BGIYpQcKQLT1il83Ng0%7c1339651298; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sun, 12-Jun-2022 05:21:38 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Wed, 09-Jun-2032 05:21:38 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.72.109.11.1339651298046396; path=/; expires=Sat, 07-Jun-42 05:21:38 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[06/13/2012 10:32 PM] - SUCCESS:IPN VERIFIED!
+[From:ipn.sandbox.paypal.com|173.0.82.126]IPN POST Vars Received By Paypal_IPN Response API:
+mc_gross=120.00 
+protection_eligibility=Ineligible 
+item_number1= 
+payer_id=9W6TWAGCGLR8C 
+tax=0.00 
+payment_date=22:31:55 Jun 13, 2012 PDT 
+payment_status=Completed 
+charset=windows-1252 
+mc_shipping=0.00 
+mc_handling=0.00 
+first_name=subodh 
+mc_fee=3.78 
+notify_version=3.4 
+custom= 
+payer_status=verified 
+business=subodh_1338802242_biz@jst-technologies.com 
+num_cart_items=1 
+mc_handling1=0.00 
+verify_sign=ARwb3braH7QrDirYGKuTdqI5LhepAAtM.houtKktEJukqYS4tbFTZMzk 
+payer_email=subodh_1339068436_biz@jst-technologies.com 
+mc_shipping1=0.00 
+tax1=0.00 
+txn_id=96R06110GU9160625 
+payment_type=instant 
+payer_business_name=subodh bansal\'s Test Store 
+last_name=bansal 
+item_name1=new 
+receiver_email=subodh_1338802242_biz@jst-technologies.com 
+payment_fee=3.78 
+quantity1=1 
+receiver_id=KMGGU2WMMUM3W 
+txn_type=cart 
+mc_gross_1=120.00 
+mc_currency=USD 
+residence_country=US 
+test_ipn=1 
+transaction_subject=Shopping Cartnew 
+payment_gross=120.00 
+ipn_track_id=ea7245e42789 
+IPN Response from Paypal Server:
+HTTP/1.1 200 OK
+Date: Thu, 14 Jun 2012 05:32:01 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=ay3HnWACx3hKkz2Fb1j6Th3tH4wqJTJP7uwgSXsQulGAcsCFyz9nuPcx4rl6WxE8YU10PGf_KZAN76P_ytu6hm86R5lIbeyacVXWBJpImI59RhPaYFfzeE1CoET7ks9TwOARD0%7cwXXjtgCbdzlfNqEyIlo03K7xW6HniI7pmdWMVz2D-6YA_bfMksdzZWgLJ6oYVMiEiVrqaW%7c4_axucnm3gggk0gU_yopFmL7NSfnNi8MRW3NJmoPz5CeJfreog2g9gvhshn6c51DnlLhZG%7c1339651922; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sun, 12-Jun-2022 05:32:02 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Wed, 09-Jun-2032 05:32:02 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.72.109.11.1339651921867909; path=/; expires=Sat, 07-Jun-42 05:32:01 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[06/14/2012 12:17 AM] - SUCCESS:IPN VERIFIED!
+[From:ipn.sandbox.paypal.com|173.0.82.126]IPN POST Vars Received By Paypal_IPN Response API:
+mc_gross=120.00 
+protection_eligibility=Ineligible 
+item_number1= 
+payer_id=SP86RDZVF9T8A 
+tax=0.00 
+payment_date=00:17:25 Jun 14, 2012 PDT 
+payment_status=Completed 
+charset=windows-1252 
+mc_shipping=0.00 
+mc_handling=0.00 
+first_name=puneet 
+mc_fee=3.78 
+notify_version=3.4 
+custom= 
+payer_status=verified 
+business=subodh_1338802242_biz@jst-technologies.com 
+num_cart_items=1 
+mc_handling1=0.00 
+verify_sign=An5ns1Kso7MWUdW4ErQKJJJ4qi4-ARPJVuhkc0KUgT6s6qfM71A-PEhq 
+payer_email=subodh_1338976460_biz@jst-technologies.com 
+mc_shipping1=0.00 
+tax1=0.00 
+txn_id=0FA681955A686663X 
+payment_type=instant 
+payer_business_name=puneet bansal\'s Test Store 
+last_name=bansal 
+item_name1=new 
+receiver_email=subodh_1338802242_biz@jst-technologies.com 
+payment_fee=3.78 
+quantity1=1 
+receiver_id=KMGGU2WMMUM3W 
+txn_type=cart 
+mc_gross_1=120.00 
+mc_currency=USD 
+residence_country=US 
+test_ipn=1 
+transaction_subject=Shopping Cartnew 
+payment_gross=120.00 
+ipn_track_id=4ff0bf35305d6 
+IPN Response from Paypal Server:
+HTTP/1.1 200 OK
+Date: Thu, 14 Jun 2012 07:17:29 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=vcq43JngAlt4Cgtjx4qABGTG_x_UnjUlpilUFVkirhPfUcAan7HEwhW9tZUEm53CUwumbz0T2TGakwo4fEzrpIPmh7cmYUGXRdqrBbQNrRAYzmq1gIua-9-anapyKQNB2WpoUm%7ckJGuvaVZLk9lpbLkcSRkexQHwdG0kdedD0OwoSJw5C7l0nnuhQNc3WLYcAE-doubTZ5raG%7cmEflppQKeaSKeia271WW3fgmE3UiCdr0llPNgnqfbCGSniHfGTDvj1IQJSSLCPHt84Mc9G%7c1339658249; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sun, 12-Jun-2022 07:17:29 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Wed, 09-Jun-2032 07:17:29 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.72.109.11.1339658249593012; path=/; expires=Sat, 07-Jun-42 07:17:29 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+

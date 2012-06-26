@@ -1,0 +1,225 @@
+<html>
+<head>
+	<title>PayPal Platform PHP NVP SDK</title>
+	<style type="text/css">
+		body {
+			font: normal .7em "Verdana", "Arial", sans-serif;
+			margin: 15px 10px;
+			width: 800px;
+			color: #333333;
+		}
+
+		ul,ol {
+			padding: 0 0 0 30px;
+		}
+
+		pre {
+			font-size: 120%;
+		}
+
+		a {
+			color: #369;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		p {
+			margin: 10;
+			padding-top: 10px;
+		}
+
+		h1,h2,h3,h4,h5,h6 {
+			color: #28426E;
+			margin-bottom: 0.5em !important;
+		}
+
+		h2,h3 {
+			color: #E27133 !important;
+			font-weight: bold;
+			margin: 25px 0 0;
+		}
+
+		h1 {
+			font-style: italic;
+			line-height: 1em;
+			font-size: 22pt;
+		}
+
+		li {
+			padding-top: 3px;
+		}
+
+		hr {
+			background-color: #CCCCCC;
+			border: 0 none;
+			height: 1px;
+		}
+	</style>
+</head>
+<body>
+
+	<h1 align='center'>PayPal Platform PHP NVP SDK</h1>
+	<h2>Table of contents</h2>
+	<ul>
+		<li><a href='#overview'><b>Overview</b></a></li>
+		<li><a href='#prerequisites'><b>Prerequisites</b></a></li>
+		<li><a href='#contents'>SDK contents</a></li>				
+		<li><a href='#samples'><b>Running the samples</b></a></li>
+		<li><a href='#using'>Integrating the SDK</a></li>
+		<li><a href='#configuration'>Property files and configuration</a></li>
+		<li><a href='#documentation'>Documentation and support</a></li>
+		<li><a href='#licensing'>Licensing</a></li>		
+	</ul>
+	<br/><br/>
+
+<a name='overview'></a>
+<h2>Overview</h2>
+<p>PayPal's Software Developer Kit (SDK) eases the process of integrating PayPal's web services into your application by providing a core library along with reference command line and web samples. This SDK provides simple APIs to invoke PayPal's adaptive NVP (name/value pair) API.</p>
+
+<p>This software is intended for use by software developers with a basic understanding of PHP. The latest upgrades, FAQs and announcements can always be found at: Tools for PayPal Developers</p>.
+
+<h3>Features supported</h3>
+
+<ul>
+	<li><b>Simple Wrapper APIs:</b> The SDK provides simple APIs to consume PayPal's' APIs or
+	Web Services. You can program to the APIs as though they are local	classes/objects.</li>
+
+	<li><b>Sample projects: </b> <span> Samples that show how the SDK library can be utilized have been provided as part of the download.</span></li>	
+		
+	<li><b>Client Authentication:</b> <span> PayPal supports two types of API credentials - 
+	<b>Three Token and Client Auth SSL certificate</b>. A merchant or application developer should have an appropriate (typically a business type)
+	account created by signing onto PayPal site. This SDK supports 3-token authentication and provides utilities that automatically setup the required authentication headers. </span></li>	
+
+	<li><b>Proxy/Firewall server Support:</b> <span> The SDK makes API calls via proxy server/port specified in the paypal_sdk_client.properties file. </span></li>
+	
+</ul>
+<hr>
+		
+<a name='prerequisites'></a>
+<h2>Prerequisites</h2>
+
+<h4>Software</h4>
+<ul>
+	<li><b>PHP 5.2.x</b> and above with Curl, OpenSSL support and PEAR - <a href='http://www.php.net/downloads.php'><b>Download</b></a></li>
+	<li><b>Apache or IIS web server</b> for running web samples - <a href='http://httpd.apache.org/download.cgi/'><b>Download</b></a></li>
+</ul>
+You can read <a href='INSTALL.txt'>INSTALL.txt</a> for detailed installation instructions.
+
+<h4>PayPal account</h4>
+<ul>
+    <li>Live business account (PayPal real time environment) - Sign up for an account at <a href='https://www.paypal.com/' target='_blank'>paypal.com</a></li>
+    <li>Sandbox business account (PayPal test environment) - Sign up for an account at <a href='https://developer.paypal.com/' target='_blank'>developer.paypal.com</a>  
+    	<br/>(view the <a href='http://www.youtube.com/v/lDzCVtBLDu4&hl=en_US&fs=1&' target='_blank'><b>account creation demo</b></a> or click <a href='https://www.x.com/docs/DOC-1379' target='_blank'><b>here</b></a> for help)</li>
+    <li>For assistance register at <a href='http://x.com' target='_blank'>x.com</a></li>
+</ul>
+<hr>
+
+
+
+<a name='contents'></a>
+<h2>SDK contents</h2>
+This SDK download bundle contains
+<ul>
+	<li><b>lib/</b> - Core SDK files. Contains CallerService.php which is the main entry point into the SDK</li>
+	<li><b>samples/</b> - Sample web applications that use the SDK library files </li>
+	<li><b>docs/</b> - Documentation</li>
+</ul>
+
+<a name='samples'></a>
+<hr>
+<h2>Running the samples</h2>
+<p>Reference implementations using the SDK library have been provided with the download bundle. The bundle comes with a default settings file so 
+that the samples work out of the box. </p> 
+
+<h3>Web samples</h3>
+To run the web samples,
+<ul>
+	<li> Copy the lib and samples folder from the SDK to your Apache htdocs folder.</a></li>
+	<li> Optionally, edit the <a href='#configuration'>configuration file</a> at Lib\Config\Config.php. 
+	<li> Get started with the sample application by navigating to http://localhost/samples/.</li>
+	<li> Check the apache error logs to troubleshoot any issue.
+</ul>
+<hr>
+
+<a name='using'></a>
+<h2>Integrating the SDK</h2>
+You can use the SDK to write your own applications. To do this,
+
+<ol>
+	<li>Copy the lib folder to your project root folder.</li>
+	<li>Edit the configuration file Config.php, if required.</li>
+	<li>Program as per the model illustrated below.</li>
+</ol>
+<h3>NVP SDK - Programming Model</h3>
+<pre>   
+
+	// <b>Include the config file and the main service wrapper file</b>
+	require_once 'Lib/Config/Config.php';
+	require_once 'Lib/CallerService.php';
+
+	// <b>Create a request object. Note the use of class constants from the NVP_SampleConstants.php helper file for defining names</b>
+	$request_array = array (
+		PaymentDetails::$payKey=> $payKey,
+		RequestEnvelope::$requestEnvelopeErrorLanguage=> 'en_US'
+	);
+
+	// <b>Convert request object to string</b>
+	$nvpStr = http_build_query($request_array);
+
+	try {
+		// <b>Invoke the "call" method where actual API call is made. The NVP request string, and endpoint are passed as the input.</b>	 
+		$resArray = hash_call("AdaptivePayments/PaymentDetails", $nvpStr);
+	} catch (Exception $ex) {
+		// <b>Process exception</b>
+	}
+
+	// <b>Parse response</b>
+	$ack = strtoupper($resArray['responseEnvelope.ack']);
+	if($ack != "SUCCESS"){
+		$_SESSION['reshash']=$resArray;
+		$location = "APIError.php";
+		header("Location: $location");
+	} else {
+		// <b>Successful call</b>
+	}
+
+</pre>
+<hr>
+
+<a name='configuration'></a>
+<h2>Property files and configuration</h2>
+<p>In order to make successful web service calls,
+Config.php file should contain needed information.
+Amongst all properties configurable through this file, the ones listed below are most important.
+<ul>
+	<li><b>The API_ENDPOINT</b> - By default this is set to https://svcs.sandbox.paypal.com/. Please note the trailing
+	slash at the end. Change this to https://svcs.paypal.com/ to make API calls against production server.</li>
+	<li><b>The API credentials section</b> - Specify either 3-token or SSL Client Auth certificate credential details such as API Username,
+	password and signature. The SDK is configured to use a common/shared public account against PayPal
+	production or sandbox environment. The samples will run as is without any configuration changes at all.</li>
+	<li><b>PROXY configuration</b> - If you are using a proxy server then specify the hostname and port and other information in this
+	section.</li>
+	<li><b>API_VERSION</b> - You need to set it to right version to take advantage of the corresponding version features.</li>
+	<li><b>X_PAYPAL_REQUEST_DATA_FORMAT</b> - Set this to JSON or XML or SOAP.</li>
+	<li><b>X_PAYPAL_RESPONSE_DATA_FORMAT</b> - Set it to JSON or XML or SOAP. Generally set to the same value as X_PAYPAL_REQUEST_DATA_FORMAT.</li>	
+</ul>
+<hr>
+
+<a name='documentation'></a>
+<h2>Documentation and support</h2>
+<ul>
+	<li><a href='https://www.x.com/community/ppx/documentation'>PayPal Documentation</a> </li>
+    <li><a href='https://www.paypal.com/dts'>Developer Technical Support</a></li>
+</ul>
+<hr>
+
+<a name='licensing'></a>
+<h2>Licensing</h2>
+<p>Read the <a href='Docs\LICENSE.txt'>license</a> file for important legal information regarding the PayPal
+SDK. There are important points you must consider when choosing to bundle this SDK within your application.</p>
+<br/>Copyright (c) 2009 PayPal, Inc.
+</body>
+</html>

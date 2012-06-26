@@ -1,0 +1,25 @@
+PayPal Platform  PHP NVP SDK
+
+=====================================================================================================================================
+SDK Version 1.2 - 10/20/2011 (mm/dd/yy)
+1.Added two new API scopes under RequestPermissions sample
+2.Added two new API(GetBasicPersonalData and GetAdvancedPersonalData)
+=====================================================================================================================================
+SDK Version 1.1.1 - 05/30/2011 (mm/dd/yy)
+Added four new API scopes under RequestPermissions sample
+=====================================================================================================================================
+SDK Version 1.1.0 - 03/31/2011 (mm/dd/yy)
+Added new API scope under RequestPermissions sample
+=====================================================================================================================================
+SDK Version 1.0.0 - 14/02/2011
+UI Updated
+============================================================================================================================
+Version 1.0.0 - 01/19/2011 (mm/dd/yy)
+Added Samples for GuestPayment
+============================================================================================================================
+Version 1.0.0 - 08/03/2010 (mm/dd/yy)
+1 - SDK core library- Thin wrapper APIs for AdaptiveAccounts and AdaptivePayments web service APIs.
+3 - A simplistic reference implementation (web samples) of the APIs using PHP. Tested with PHP 5.2.10 and Apache 2.2 web server.     
+4 - Source code for core library and web samples. The core library is in <instal_dir>/lib folder
+============================================================================================================================
+    

@@ -1,0 +1,64 @@
+e-Tutor PHP Readme
+~~~~~~~~~~~~~~~~~~
+
+Introduction
+------------
+e-Tutor is a suite of open source (GPL) online course tools. The
+individual pieces are very simple to configure and use. They do not
+require any special hardware. This release of e-Tutor is PHP/MySQL based.
+It can handle multiple instructors and multiple courses, and is geared
+towards expandability.
+
+License
+-------
+Please see LICENSE file.
+
+Installation
+------------
+Please see INSTALL file.
+
+Post-Install Instructions
+-------------------------
+e-Tutor PHP has a fairly specific order in which things have to be done to
+create a usable system. Although they are mostly intuitive, some steps may
+seem strange. This is because of the model that e-Tutor has adopted, where
+the Administrator should not have to do everything; it is mostly up to the
+instructors of courses.
+
+The standard usage cycle is as follows:
+- Administrator installs system
+- Administrator logs in
+- Administrator sets system-wide Preferences
+- Administrator creates "Prof"-type users
+- "Prof" users log in
+- "Prof" users add their courses
+- "Prof" users add their students to these courses, including TA's
+- "Prof" users edit the TA users to give them TA rights
+- "Prof" users create assignments for the courses
+- "Student" users log in
+- "Student" users upload assignments
+- "TA" or "Prof" users log in and download assignments
+
+Assignments can be downloaded as either individual files, or as an 
+assignment archive in ZIP format. This feature only works if the standard 
+open-source "zip" program exists and is accessible from PHP.
+
+Upon reading these steps, they should hopefully seem fairly logical. Note 
+that upon setting the system up the Administrator only has to create 
+"Prof"-type users, although he does have permissions to do anything a 
+"Prof" user can, for any course on the system.
+
+Reporting Bugs
+--------------
+Bugs can be reported at our SourceForge Project Page. It is located at:
+http://www.sf.net/projects/etutor.
+
+Please make certain that the correct version is selected when you are
+submitting a bug report. The version can be found on the login screen, at
+the very bottom.
+
+Contact Information
+-------------------
+Web Site: http://etutor.sf.net
+
+eMail addresses available at web site.
