@@ -1,0 +1,87 @@
+e-Tutor PHP Installation
+------------------------
+
+Installation of the PHP version of e-Tutor is very simple. It can be
+divided into simple steps. Troubleshooting follows the installation
+instructions.
+
+Preinstallation
+Make certain you have Apache set up properly, and running. Make certain
+you have PHP4 installed. Also, MySQL needs to be up and running, with
+the root user properly set up. If you would like to allow users to
+download file archives (a very neat tool), make certain you have the
+program 'zip'.
+
+Step 1 - Unzip
+If you're reading this, you've likely done this already. The important
+thing is the location. e-Tutor must be in a directory that is accessible
+from the outside on a web server with PHP. If your web server's
+DocumentRoot is /var/www/html, then a good place to put e-Tutor may be
+/var/www/html/et, or similar. If you have unzipped it, you can move the
+directory right over. Otherwise, use 'tar -zxvf etphp-version.tar.gz'
+and rename the directory to whatever is appropriate.
+
+Step 2 - Check permissions
+For e-Tutor to run properly, it must be owned and operated by the Apache
+user. Typically you can go into the directory with all the PHP files and
+simple type 'chown apache:apache ./', where apache:apache is the Apache
+user:group. If you are unsure what the user and group is, see you apache
+configuration, it's set in there.
+
+Step 3 - Run the setup
+Assuming the example above, the et-php setup script should be accessible
+via http://www.yourmachine.com/et/setup.php in a web browser. In the
+setup script, simply enter the name of the organization at which the
+server is running, a password for the e-Tutor administrator, and the
+previously set username and password for MySQL. Remember to choose a
+good password for the adminstrator; it should not be easy to guess. Note
+that the username for MySQL will generally be 'root', and the password
+is not the system's root password, it is MySQL's.
+
+Step 4 - Configure all the options
+e-Tutor has been set up successfully. You can log in now. However, the
+administrator can set up more options than were listed in the setup.
+These can be found under 'Preferences' in the main menu once you log in.
+It is important that the options be set to match the standards of the
+institution: the course code format, username format, etc.
+
+
+Troubleshooting Q&A
+-------------------
+
+e-Tutor's design is simple; any errors in the install are thus simple to
+fix. They are most often caused by a misconfiguration of either Apache,
+PHP, or MySQL.
+
+Q: I've entered the correct password for MySQL, but the setup says it
+cannot connect to MySQL. What could be wrong?
+
+A: This sounds like a MySQL problem. Make certain MySQL is running. On a
+UN*X-type machine, this can be done by "ps ax | grep mysql". If you get
+an entry with 'mysqld', then the source of the problem is elsewhere.
+Make certain you're using the MySQL root password.
+
+Q: Will et-php run on Windows NT/2000/XP?
+
+A: It has not been tested. However, there are definitely areas that
+would not work, especially those relying in the file location /tmp, and
+the open source 'zip' program.
+
+Q: When I try to view one of the PHP files in a browser, all I get is
+the code! What's wrong?
+
+A: This means Apache is not set up to run PHP. Rather than execute the
+code, it is dumping it to the user. Please see the PHP documentation on
+how to fix that.
+
+Q: Some of the administrative functions don't work with my browser,
+what's up?
+
+A: Some of the administrative pages use small amounts of JavaScript.
+They are written to work with browsers put out in the last couple of
+years. This is an acceptable burden to place on the administrator,
+however, the student side of the interface will work on any browser,
+including Lynx.
+
+If you have any questions that you feel are unanswered or should be
+covered here, please send an eMail to suwalski@users.sf.net.

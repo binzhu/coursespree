@@ -1,0 +1,329 @@
+
+% 
+% image = [142 139 139 0 0 0 0
+%         139 165 140 5 0 7 0
+%         32 134 134 0 0 0 0
+%         0 2 0 6 0 9 0
+%         0 0 0 0 0 0 0
+%         0 5 9 4 0 4 8
+%         0 2 0 4 0 7 0
+%         0 0 0 0 0 0 0];
+
+% image = [142 139 139 
+%         139 165 140 
+%         32 134 134];
+image=imread('capture.png');
+imagesc(image);
+mask2 = [2 3 5 
+        5 6 8
+        5 8 5];
+mask = [142 139 139 
+        139 165 140 
+        32 134 134];
+    
+    Buffer = [ 3.00 4.00 5.00 6.00 7.00
+           2.00 3.00 7.00 9.00 4.00
+           2.00 3.00 7.00 9.00 4.00
+           2.00 3.00 7.00 9.00 4.00
+           2.00 3.00 7.00 9.00 8.00]; 
+       
+       [image_rows, image_columns] = size(image);
+       
+       [mask_rows, mask_columns] = size(mask);
+       
+       Buffer_rows = image_rows - mask_rows +1;
+       
+       Buffer_columns = image_columns - mask_columns +1;
+       
+       Buffer = zeros(Buffer_rows, Buffer_columns);
+       mij = 0;
+       for brows= 1: Buffer_rows
+           
+           for bcolumns = 1: Buffer_columns
+               
+               result = 0;
+               d= 0;
+               
+              
+               for i = 1: mask_rows
+                   
+                   for j = 1: mask_columns
+                        middle=image(i,j);
+%                        result = result + image(brows-i+mask_rows, bcolumns -j+mask_columns)*mask(i, j);
+                       [B,index]=sort(image,1);
+                       B = sort(B(:));
+                       med = median(B);
+                       s=med;
+                       d =  abs((med - B)) ;
+                       d = sort(d);
+                       T = median(d);
+                      
+                       
+                      [rr,cc] = size(d);
+                     
+                      
+                      for ss = 1: rr
+                       for jj =1 : cc
+                          if d(ss,jj) > T
+                           mij(ss,jj) = 1;
+                           
+                       elseif d(ss,jj) <= T
+                           mij(ss,jj) = 0;
+                            
+                          end  
+                       end
+                      end
+                       
+%                       if center pixed equals 1 its noise & replaced by median
+                      
+                       if mij(5 ,1) == 1
+                           result   = med;
+                       elseif mij(5 ,1) == 0
+                           result   = med;    
+                       end
+                       
+%                        d{mrow , mcolumn} = image{mrow ,mcolumn} - 5 ;
+%                       d = imsubtract(image,med);  
+                   end
+                   
+               end
+               
+%                Buffer(brows, bcolumns) = result;
+               image(brows, bcolumns) = result;
+               
+           end
+           
+       end
+      imshow(image);
+
+
+
+
+
+
+
+____________________________________
+
+%
+% image = [142 139 139 0 0 0 0
+%         139 165 140 5 0 7 0
+%         32 134 134 0 0 0 0
+%         0 2 0 6 0 9 0
+%         0 0 0 0 0 0 0
+%         0 5 9 4 0 4 8
+%         0 2 0 4 0 7 0
+%         0 0 0 0 0 0 0];
+
+W = [142 139 139
+    139 165 140
+    32 134 134];
+% image=imread('c2.jpg');
+% imagesc(image);
+
+I=imread('c1.jpg');
+I = double(I);
+Z = imnoise(I,'salt & pepper',0.02);   % adding Noise
+a = double(Z);
+b = a;
+mask2 = [2 3 5
+    5 6 8
+    5 8 5];
+mask = [142 139 139
+    139 165 140
+    32 134 134];
+
+Buffer = [ 3.00 4.00 5.00 6.00 7.00
+    2.00 3.00 7.00 9.00 4.00
+    2.00 3.00 7.00 9.00 4.00
+    2.00 3.00 7.00 9.00 4.00
+    2.00 3.00 7.00 9.00 8.00];
+
+[image_rows, image_columns] = size(image);
+
+[mask_rows, mask_columns] = size(mask);
+
+Buffer_rows = image_rows - mask_rows +1;
+
+Buffer_columns = image_columns - mask_columns +1;
+
+Buffer = zeros(Buffer_rows, Buffer_columns);
+mij = 0;
+for brows= 1:mask_rows
+    
+    for bcolumns = 1: mask_columns
+        [row col] = size(a);
+        for x = 2:1:row-1
+            for y = 2:1:col-1
+                result = 0;
+                d= 0;
+                
+                
+                %                for x = 1: mask_rows
+                %
+                %                    for y = 1: mask_columns
+                %
+                a1 = [W(1)*a(x-1,y-1) W(2)*a(x-1,y) W(3)*a(x-1,y+1) W(4)*a(x,y-1) W(5)*a(x,y) W(6)*a(x,y+1) W(7)*a(x+1,y-1) W(8)*a(x+1,y) W(9)*a(x+1,y+1)];
+                B = sort(a1);
+                %                         middle=image(i,j);
+                %                        result = result + image(brows-i+mask_rows, bcolumns -j+mask_columns)*mask(i, j);
+                %                        [B,index]=sort(image,1);
+                %                        B = sort(B(:));
+                med = median(B);
+                %
+                %
+                d =  abs((med - B)) ;
+                d = sort(d);
+                T = median(d);
+                %
+                %
+                [rr,cc] = size(d);
+                
+                
+                for ss = 1: rr
+                    for jj =1 : cc
+                        if d(ss,jj) > T
+                            mij(ss,jj) = 1;
+                            
+                        elseif d(ss,jj) <= T
+                            mij(ss,jj) = 0;
+                            
+                        end
+                    end
+                end
+                %
+                % % if center pixed equals 1 its noise & replaced by median
+                %
+                if mij(1 ,5) == 1
+                    result   = med;
+                elseif mij(1 ,5) == 0
+                    result   = med;
+                end
+                
+                %                        d{mrow , mcolumn} = image{mrow ,mcolumn} - 5 ;
+                %                       d = imsubtract(image,med);
+            end
+            
+        end
+        
+        %                Buffer(brows, bcolumns) = result;
+        I(brows, bcolumns) = result;
+        
+    end
+    
+end
+ imagesc(b); %noised image
+
+imagesc(I);  %noise free image
+
+
+______________________
+
+
+% 
+% %
+% % image = [142 139 139 0 0 0 0
+% %         139 165 140 5 0 7 0
+% %         32 134 134 0 0 0 0
+% %         0 2 0 6 0 9 0
+% %         0 0 0 0 0 0 0
+% %         0 5 9 4 0 4 8
+% %         0 2 0 4 0 7 0
+% %         0 0 0 0 0 0 0];
+% 
+% W = [142 139 139
+%     139 165 140
+%     32 134 134];
+% % image=imread('c2.jpg');
+% % imagesc(image);
+% 
+% I=imread('c1.jpg');
+% imshow(I);
+% 
+% I = double(I);
+% Z = imnoise(I,'salt & pepper',0.02);   % adding Noise
+% a = double(Z);
+% b = a;
+% mask2 = [2 3 5
+%     5 6 8
+%     5 8 5];
+% mask = [142 139 139
+%     139 165 140
+%     32 134 134];
+% % 
+% % Buffer = [ 3.00 4.00 5.00 6.00 7.00
+% %     2.00 3.00 7.00 9.00 4.00
+% %     2.00 3.00 7.00 9.00 4.00
+% %     2.00 3.00 7.00 9.00 4.00
+% %     2.00 3.00 7.00 9.00 8.00];
+% 
+% [image_rows, image_columns] = size(image);
+% 
+% [mask_rows, mask_columns] = size(mask);
+% 
+% Buffer_rows = image_rows - mask_rows +1;
+% 
+% Buffer_columns = image_columns - mask_columns +1;
+% 
+% Buffer = zeros(Buffer_rows, Buffer_columns);
+% mij = 0;
+% for brows= 1:mask_rows
+%     
+%     for bcolumns = 1: mask_columns
+%         [row col] = size(a);
+%         for x = 2:1:row-1
+%             for y = 2:1:col-1
+%                 result = 0;
+%                 d= 0;
+%                 
+%                 a1 = [W(1)*a(x-1,y-1) W(2)*a(x-1,y) W(3)*a(x-1,y+1) W(4)*a(x,y-1) W(5)*a(x,y) W(6)*a(x,y+1) W(7)*a(x+1,y-1) W(8)*a(x+1,y) W(9)*a(x+1,y+1)];
+%                 B = sort(a1);
+% %                 middle=image(x,y);
+%                 med = median(B);
+%                 
+%                 d =  abs((med - B)) ;
+%                 d = sort(d);
+%                 T = median(d);
+%                 [rr,cc] = size(d);
+%                 
+%                 
+%                 for ss = 1: rr
+%                     for jj =1 : cc
+%                         if d(ss,jj) > T
+%                             mij(ss,jj) = 1;
+%                             
+%                         elseif d(ss,jj) <= T
+%                             mij(ss,jj) = 0;
+%                             
+%                         end
+%                     end
+%                 end
+%                 %
+%                 % % if center pixed equals 1 its noise & replaced by median
+%                 %
+%                 if mij(1 ,5) == 1
+%                     result   = med;
+%                 elseif mij(1 ,5) == 0
+%                     result   = med;
+%                 end
+%                 
+%                 %                        d{mrow , mcolumn} = image{mrow ,mcolumn} - 5 ;
+%                 %                       d = imsubtract(image,med);
+%             end
+%             
+%         end
+%         
+%         %                Buffer(brows, bcolumns) = result;
+%         I(brows, bcolumns) = result;
+%         
+%     end
+%     
+% end
+% %  imagesc(b); %noised image
+% 
+% % imshow(unint(I));  %noise free image
+% 
+% 
+% 
+
+
+

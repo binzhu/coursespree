@@ -1,0 +1,3 @@
+https://www.x.com/developers/paypal/products/adaptive-payments
+https://www.x.com/devzone/articles/iauction-adaptive-payments-tutorial-featuring-parallel-payments
+http://designertuts.com/145/paypal-ipn-receiving-instant-payments-in-your-web-application
