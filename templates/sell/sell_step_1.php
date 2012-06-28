@@ -60,7 +60,7 @@
 				<img src="images/upload.jpg" border="0" alt="" id="userfile" />
 			</td>
 			<td style="vertical-align:middle">
-				<div id="loading"><img src="ajax-loader.gif" alt="Loading" /> Loading, please wait...</div>
+				<div id="loading"><img src="js-plugins/ajax-file-uploader/ajax-loader.gif" alt="Loading" /> Loading, please wait...</div>
 				<div id="errormes"><input type="text" name="doc" value="<?php echo stripslashes($doc); ?>" readonly></div>
 				<div class="clear" style="height:10px;"></div>
 			</td>
