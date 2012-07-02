@@ -66,7 +66,6 @@
 			</td>
 		</tr>
 		<!-- ****** Ajax File Uploader ********* -->
-		
 		<tr>
 			<td width="200">State:</td>
 			<td>
