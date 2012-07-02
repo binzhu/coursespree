@@ -714,11 +714,31 @@ function showSearchTemplate($s, $so, $stateID, $schoolID, $deptID) {
 		$paging = generateSearchResultsPaging($sql, 8, $link);
 		$sql = $sql . $paging['limit'];
 		$data = get_rows($sql);
-		
-		if(!empty($data)) {
-			require 'searchTemplate.php';
-		}
+
+
+    $khan_data = khanAcademySearch($s);
+
+	  require 'searchTemplate.php';
 	}
+}
+
+
+function khanAcademySearch($query) {
+  $youtube_api_url = "https://gdata.youtube.com/feeds/api/videos?q=$query&author=khanacademy";
+
+  $xml = simplexml_load_file($youtube_api_url);
+
+  $data = array();
+
+  $counter = 0;
+  foreach($xml->entry as $entry) {
+    $data[$counter]['title'] = $entry->title;
+    $data[$counter]['link'] = $entry->link["href"][0];
+
+    $counter++;
+  }
+
+  return $data;
 }
 
 function getSign($link) {

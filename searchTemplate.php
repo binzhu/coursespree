@@ -1,4 +1,17 @@
 <?php
+
+if(!empty($khan_data)) {
+  foreach($khan_data as $item) {
+    ?>
+    
+    <div class="_thb_box">
+      <strong>Khan Academy</strong> <a href='<?php echo $item['link'] ?>'><?php echo $item['title'] ?></a>
+    </div>
+
+    <?php
+  }
+}
+
 if(!empty($data)) {
 	foreach($data as $notice) {
 		$coverImage = "uploads/docs/preview/".stripslashes($notice->coverImage);
