@@ -5,7 +5,7 @@ if(!empty($khan_data)) {
     ?>
     
     <div class="_thb_box">
-      <strong>Khan Academy</strong> <a href='<?php echo $item['link'] ?>'><?php echo $item['title'] ?></a>
+      <strong>Khan Academy</strong> <a href='video.php?link=<?php echo $item['embed'] ?>&title=<?php echo $item['title'] ?>'><?php echo $item['title'] ?></a>
     </div>
 
     <?php
