@@ -262,6 +262,7 @@ if(isset($_POST['changePasswordVar'])) {
 
 if(isset($_POST['sell_step_1'])) {
 	$doc = filterMe($_POST['doc']);
+	$coverimage = filterMe($_POST['coverimage']);
 	$state = filterMe($_POST['state']);
 	$school = filterMe($_POST['school']);
 	$dept = filterMe($_POST['dept']);
@@ -290,7 +291,7 @@ if(isset($_POST['sell_step_1'])) {
 	}
 	
 	if(!(isError())) {
-		$sql = "INSERT INTO `".DB_PREFIX."notices` SET userID='{$_SESSION['userID']}', doc='$doc', stateID='$state', schoolID='$school', deptID='$dept', courseID='$course', term='$term', status='$status', dated='$dated'";
+		$sql = "INSERT INTO `".DB_PREFIX."notices` SET userID='{$_SESSION['userID']}', doc='$doc',coverimage = '$coverimage', stateID='$state', schoolID='$school', deptID='$dept', courseID='$course', term='$term', status='$status', dated='$dated'";
 		$res = mysql_query($sql);
 		if($res) {
 			$docID = mysql_insert_id();

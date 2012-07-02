@@ -87,9 +87,9 @@ if($status != '1') {
 						<?php
 						$coverImageNameOnly = $coverImage;
 						$coverImage = "uploads/docs/preview/".stripslashes($coverImage);
-						if(!file_exists(stripslashes(trim($coverImage))) || trim($coverImageNameOnly) == '') {
-							$coverImage = 'images/no-img.jpg';
-						}
+						//if(!file_exists(stripslashes(trim($coverImage))) || trim($coverImageNameOnly) == '') {
+						//	$coverImage = 'images/no-img.jpg';
+						//}
 						?>
 						<div class="detail_col">
 							<div class="_cont">
