@@ -3,6 +3,10 @@
 if (str_replace(DIRECTORY_SEPARATOR, "/", __FILE__) == $_SERVER['SCRIPT_FILENAME']) {
     exit;
 }
+/*local database test*/
+//define('G_DBHOST', '127.0.0.1');
+//define('G_DBUSER', 'root');
+//define('G_DBPASSWD', 'devbox2012');
 
 /** The database Host */
 define('G_DBTYPE', 'mysql');
