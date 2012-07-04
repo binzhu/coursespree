@@ -726,6 +726,25 @@ function showSearchTemplate($s, $so, $stateID, $schoolID, $deptID) {
 function khanAcademySearch($query) {
   $youtube_api_url = "https://gdata.youtube.com/feeds/api/videos?q=$query&author=khanacademy";
 
+  $feed = new SimplePie();
+  $feed->set_feed_url($youtube_api_url);
+
+  $feed->init();
+
+  $data = array();
+
+  $counter = 0;
+  foreach($feed->get_items() as $item) {
+    $data[$counter]['title'] = $item->get_title();
+    $data[$counter]['link'] = $item->get_link();
+
+    $enclosure = $item->get_enclosure();
+    $data[$counter]['embed'] = $enclosure->link;
+
+    $counter++;
+  }
+
+  /*
   $xml = simplexml_load_file($youtube_api_url);
 
   $data = array();
@@ -735,8 +754,24 @@ function khanAcademySearch($query) {
     $data[$counter]['title'] = $entry->title;
     $data[$counter]['link'] = $entry->link["href"][0];
 
+    echo "<pre>";
+    print_r($entry->children());
+    echo "</pre>"; 
+
+    /*
+    foreach($entry->children()[22]->children() as $child) {
+      echo "<pre>";
+      echo "<strong>CHILD</strong><br/>";
+      var_dump($child);
+      echo "</pre>";
+      echo "<br/><br/>";
+    }
+
+    //$data[$counter]['embed'] = $entry->link["href"][0];
+
     $counter++;
   }
+  */
 
   return $data;
 }

@@ -11,6 +11,7 @@ define('FB_APP_SECRET_KEY', 'c83aa406ae082248387170edf2c65a9e');
 
 require_once 'db.php';
 require_once 'functions.php';
+require_once 'simplepie.inc';
 
 if(isUserLoggedin()) {
 	$user = getLoggedUser();
