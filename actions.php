@@ -30,9 +30,17 @@ if(isset($_POST['loginVar'])) {
 	$password = filterMe($_POST['password']);
 	$cPassword = filterMe($_POST['cPassword']);
 	
+	$reflink = filterMe($_POST['reflink']);
+	$refby_id = filterMe($_POST['refby_id']);
+	if ($refby_id != null){
+		$refward = 2;
+	}else{
+		$refward = 0;
+	}	
 	$state = filterMe($_POST['state']);
 	$school = filterMe($_POST['school']);
 	$dept = filterMe($_POST['dept']);
+
 	
 	$active = '0';
 	$dated = date('Y-m-d H:i:s');
@@ -78,7 +86,7 @@ if(isset($_POST['loginVar'])) {
 		
 		if(!(isError())) {
 			$sql = "INSERT INTO `".DB_PREFIX."users` SET
-						fName='$fName', lName='$lName', email='$email', userName='$userName', password='".md5($password)."', active='$active', dated='$dated'
+						fName='$fName', lName='$lName', email='$email',reflink='$reflink',refward='$refward',refby_id='$refby_id', userName='$userName', password='".md5($password)."', active='$active', dated='$dated'
 					";
 			$res = mysql_query($sql);
 			if($res) {

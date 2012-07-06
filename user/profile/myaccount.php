@@ -10,6 +10,8 @@ if(!isset($_POST['myAccountVar'])) {
 	$fName = $user->fName;
 	$lName = $user->lName;
 	$email = $user->email;
+	$reflink =$user->reflink;
+	$refby = $user->refby_id;
 	$userName = $user->userName;
 	$gender = $user->gender;
 
@@ -82,6 +84,14 @@ require_once 'templates/header.php';
 												<td>Email:</td>
 												<td><input type="text" readonly="readonly" value="<?php echo stripslashes($email); ?>" name="email"></td>
 											</tr>
+											<tr>
+												<td>Refer Link:</td>
+												<td><a href="http://localhost/register.php?ref=<?php echo stripslashes($reflink); ?>" >http://localhost/register.php?ref=<?php echo stripslashes($reflink); ?></a></td>
+											</tr>
+											<tr>
+												<td>Reffered by:</td>
+												<td><?php echo $refby ;?></td>
+											</tr>											
 											<tr>
 												<td>Date of Birth:</td>
 												<td>

@@ -22,6 +22,15 @@ function get_country_id($countryName) {
 	$data = get_field('id', $sql);
 	return $data;
 }
+function get_refby_id_by_reflink($reflink) {
+	if ($reflink == null){
+		return null;
+		}
+	$sql = "SELECT id FROM `".DB_PREFIX."users` WHERE reflink='$reflink'";
+	$data = get_row($sql);
+	$data = $data ->id;
+	return $data;
+}
 function get_countries() {
 	$sql = "SELECT * FROM `".DB_PREFIX."countries`";
 	$data = get_rows($sql);
@@ -1601,5 +1610,29 @@ function getExpenses($userID) {
 		$data = number_format($data, 2, '.', '');
 		return $data;
 	}
+}
+
+function rand_str()
+{
+    $length = 20;
+    $chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
+    // Length of character list
+    $chars_length = (strlen($chars) - 1);
+
+    // Start our string
+    $string = $chars{rand(0, $chars_length)};
+   
+    // Generate random string
+    for ($i = 1; $i < $length; $i = strlen($string))
+    {
+        // Grab a random character from our list
+        $r = $chars{rand(0, $chars_length)};
+       
+        // Make sure the same two characters don't appear next to each other
+        if ($r != $string{$i - 1}) $string .=  $r;
+    }
+   
+    // Return the string
+    return $string;
 }
 ?>
