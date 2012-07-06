@@ -31,6 +31,13 @@ function get_refby_id_by_reflink($reflink) {
 	$data = $data ->id;
 	return $data;
 }
+function get_username_by_id($refby) {
+
+	$sql = "SELECT userName FROM `".DB_PREFIX."users` WHERE id='$refby'";
+	$data = get_row($sql);
+	$data = $data ->userName;
+	return $data;
+}
 function get_countries() {
 	$sql = "SELECT * FROM `".DB_PREFIX."countries`";
 	$data = get_rows($sql);

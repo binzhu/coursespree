@@ -67,10 +67,10 @@ if(isUserLoggedin()) {
 							<div class="_label">Re-Type Email</div>
 							<div class="_input"><input type="text" value="" name="cEmail"></div>
 							<div class="clear" style="height:20px;"></div>
+							<div class="_input"><input type="hidden" name="reflink" value="<?php echo rand_str(); ?>" /></div>
 							<?php if (isset($_GET['ref'])) {?>
-							<div class='_input'><input type='text' name='refby_id' value='<?php echo get_refby_id_by_reflink($_GET['ref']); ?>' /></div>
-								
-							<?php }else{ echo '<div id="test">nothing</div>' ;} ?>						
+							<div class='_input'><input type='hidden' name='refby_id' value='<?php echo get_refby_id_by_reflink($_GET['ref']); ?>' /></div>
+							<?php }?>						
 							<h1>Login Details</h1>
 							<div class="_label">User Name</div>
 							<div class="_input"><input type="text" value="<?php echo $userName; ?>" name="userName"></div>
@@ -105,7 +105,7 @@ if(isUserLoggedin()) {
 									</select>
 				
 							
-							<div class="_input"><input type="text" name="reflink" value="<?php echo rand_str() ?>" /></div>
+							
 							
 				
 									<span class="addNew">

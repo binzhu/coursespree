@@ -54,6 +54,12 @@ require_once 'templates/header.php';
 						<div class="profile_content">
 							<form enctype="multipart/form-data" method="post" action="" name="myAccount">
 								<input type="hidden" name="myAccountVar" id="myAccountVar" value="1" />	
+								<?php if($reflink != null) {?>
+								<p>
+								Here is your unique referal link, use this link to invite friend joins coursespree, your will get 5% interest of their first two transactions.
+								</p>
+								<p><a href="http://localhost/register.php?ref=<?php echo stripslashes($reflink); ?>" >http://localhost/register.php?ref=<?php echo stripslashes($reflink); ?></a></p>
+								<?php }?>
 								<h1>Settings</h1>
 								<div class="clear"></div>
 								<div class="_settings_hdr _sel"><span>Personal Information</span></div>
@@ -61,6 +67,7 @@ require_once 'templates/header.php';
 									<div class="_cont">
 										<table cellspacing="2" cellpadding="2" border="0" class="_form">
 											<tbody>
+
 											<tr>
 												<td>Username:</td>
 												<td><input type="text" readonly="readonly" value="<?php echo stripslashes($userName); ?>" name="userName"></td>
@@ -84,13 +91,10 @@ require_once 'templates/header.php';
 												<td>Email:</td>
 												<td><input type="text" readonly="readonly" value="<?php echo stripslashes($email); ?>" name="email"></td>
 											</tr>
-											<tr>
-												<td>Refer Link:</td>
-												<td><a href="http://localhost/register.php?ref=<?php echo stripslashes($reflink); ?>" >http://localhost/register.php?ref=<?php echo stripslashes($reflink); ?></a></td>
-											</tr>
+
 											<tr>
 												<td>Reffered by:</td>
-												<td><?php echo $refby ;?></td>
+												<td><?php echo get_username_by_id($refby); ?></td>
 											</tr>											
 											<tr>
 												<td>Date of Birth:</td>
