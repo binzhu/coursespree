@@ -5,7 +5,7 @@ define('DB_HOST', '127.0.0.1');
 //define('DB_PASS', 'Course@123');
 
 define('DB_USER', 'root');
-define('DB_PASS', 'devbox2012');
+define('DB_PASS', 'coursespree');
 
 $con = mysql_connect(DB_HOST, DB_USER, DB_PASS);
 //if($con){
