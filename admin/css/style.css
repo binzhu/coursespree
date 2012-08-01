@@ -94,7 +94,6 @@ padding-right:20px;
 margin:0 auto;
 width:900px;
 height:auto;
-padding:0px 0 50px 0;
 background:url(../images/menu_bg.jpg) no-repeat center top #fff;
 }
 .footer{width:900px;height:87px;background:url(../images/footer_bg.jpg) no-repeat center top;}
@@ -566,4 +565,8 @@ dl.submit {
 }
 .hidePartentTR:hover td {
 	background: none !important;
+}
+
+.coverImg .NFTextCenter {
+	width:200px;
 }

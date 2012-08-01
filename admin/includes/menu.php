@@ -82,7 +82,7 @@ $menu = array(
 			array(
 				"title" => "Closed Questions",
 				"table" => "questions",
-				"custom_sql" => "SELECT q.*, DATE_FORMAT(q.dated, '%d %b, %Y %H:%i:%s') as dated, qc.name as catName, CONCAT(u.fName,' ',u.lName) as userName FROM `".DB_PREFIX."questions` q LEFT JOIN `".DB_PREFIX."users` u ON(q.userID=u.id) LEFT JOIN `".DB_PREFIX."question_categories` qc ON(q.catID=qc.id) WHERE status='closed'",
+				"custom_sql" => "SELECT q.*, DATE_FORMAT(q.dated, '%d %b, %Y %H:%i:%s') as dated, qc.name as catName, CONCAT(u.fName,' ',u.lName) as userName FROM `".DB_PREFIX."questions` q LEFT JOIN `".DB_PREFIX."users` u ON(q.userID=u.id) LEFT JOIN `".DB_PREFIX."question_categories` qc ON(q.catID=qc.id) WHERE status='closed' ORDER BY q.id DESC",
 				"page" => "question.php",
 				'fields' => array('caption' => 'Caption', 'userName' => 'User Name', 'catName' => 'Category', 'tags' => 'Tags', 'status' => 'Status', 'dated' => 'Created on')
 			),
@@ -94,6 +94,27 @@ $menu = array(
 		),
 	),
 	
+	array(
+		"title" => "Manage Notes",
+		"table" => "notices",
+		"custom_sql" => "SELECT n.*, DATE_FORMAT(n.dated, '%d %b, %Y %H:%i:%s') as dated, CONCAT(u.fName,' ',u.lName) as userName FROM `".DB_PREFIX."notices` n LEFT JOIN `".DB_PREFIX."users` u ON(n.userID=u.id) ORDER BY n.id DESC",
+		"page" => "notes.php",
+		'fields' => array('docName' => 'Caption', 'userName' => 'User Name', 'price' => 'Price($)', 'dated' => 'Created on'),
+		'sub' => array(
+			array(
+				"title" => "List Notes",
+				"table" => "notices",
+				"custom_sql" => "SELECT n.*, DATE_FORMAT(n.dated, '%d %b, %Y %H:%i:%s') as dated, CONCAT(u.fName,' ',u.lName) as userName FROM `".DB_PREFIX."notices` n LEFT JOIN `".DB_PREFIX."users` u ON(n.userID=u.id) ORDER BY n.id DESC",
+				"page" => "notes.php",
+				'fields' => array('docName' => 'Caption', 'userName' => 'User Name', 'price' => 'Price($)', 'dated' => 'Created on'),
+			),
+			array(	
+				"title" => "Add Notes",
+				"page" => "notes.php",
+				"link" => "direct"
+			),
+		),
+	),
 	
 	array(
 		"title" => "Other Settings",

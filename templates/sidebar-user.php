@@ -106,12 +106,21 @@ $currentPage = curPageName();
 			<h2>My Profile</h2>
 			<ul>
 				<li> > <a href="user.php?type=myaccount">Edit Settings / Profile</a><br />
-				<li> > <a href="user.php?type=mypurchases">Purchases</a>
 				<li> > <a href="user.php?type=sell">Upload Notes</a>
 				<li> > <a href="user.php?type=subscriber">Subscribers</a>
 				<li> > <a href="user.php?type=subscribed">Subscribed</a>
-                <li> > <a href="user.php?type=mydocs">My Documents</a>
 				<li> > <a href="index.php?action=logout">Logout</a>
+			</ul>
+		</div>
+		
+		<div class="_hline"></div>
+		<div class="userSidebarLinks" style="padding:4px; line-height:1.3">
+			<h2>Notes</h2>
+			<ul>
+				<li> > <a href="user.php?type=mydocs">Notes uploaded by me</a>
+				<li> > <a href="user.php?type=mypurchases">Notes purchased by me</a>
+				<li> > <a href="user.php?type=payment&mode=nReceived">payment received till date</a>
+				<li> > <a href="user.php?type=payment&mode=nPaid">payment paid till date</a>
 			</ul>
 		</div>
 		
@@ -121,8 +130,8 @@ $currentPage = curPageName();
 			<ul>
 				<li> > <a href="user.php?type=questions">Questions posted by me</a>
 				<li> > <a href="user.php?type=answers">Answers given by me</a>
-				<li> > <a href="user.php?type=payment&mode=received">payment received till date</a>
-				<li> > <a href="user.php?type=payment&mode=paid">payment paid till date</a>
+				<li> > <a href="user.php?type=payment&mode=qReceived">payment received till date</a>
+				<li> > <a href="user.php?type=payment&mode=qPaid">payment paid till date</a>
 			</ul>
 		</div>
 	<?php } ?>

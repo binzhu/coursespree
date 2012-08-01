@@ -151,8 +151,8 @@ function show_admin_msgs() {
 	}
 }
 
-function generatePaging($sql) {
-	define('MAX_RECORD_PER_PAGE', 5);
+function generatePaging($sql, $type='') {
+	define('MAX_RECORD_PER_PAGE', 10);
 	$pageNum = isset($_GET['paging']) ? $_GET['paging'] : 1;
 	
 	$tmpRes = mysql_query($sql);
@@ -187,26 +187,41 @@ function generatePaging($sql) {
 		$pagingEndPage = $pageNum + 5;
 	
 	if ($pageNum > 1 ) {
-		$prPage = $pageNum -1;			
-		$pagingString .= '<a href="'. $link .$sign.'paging=1" ><< First</a>';
-		$pagingString .= '<a href="'. $link .$sign.'paging='. $prPage .'" >< Prev</a>';
+		$prPage = $pageNum -1;
+		
+		if($type != '') {
+			$pagingString .= '<a href="javascript:" onclick="javascript:loadPage(\'1\', \''.$type.'\');"><< First</a>';
+			$pagingString .= '<a href="javascript:" onclick="javascript:loadPage(\''.$prPage.'\', \''.$type.'\');">< Prev</a>';
+		} else {
+			$pagingString .= '<a href="'. $link .$sign.'paging=1" ><< First</a>';
+			$pagingString .= '<a href="'. $link .$sign.'paging='. $prPage .'" >< Prev</a>';
+		}
 	} else {
 		$pagingString .= '<span class="disabled"><< First</span>';
-		$pagingString .= '<span class="disabled">< Prev</span>';		
+		$pagingString .= '<span class="disabled">< Prev</span>';
 	}
 
 	for($i=$pagingStartPage;$i<=$pagingEndPage;$i++) {	
 		if ($pageNum == $i) {
 			$pagingString .= '<span class="current">'.$i.'</span>';
 		} else {
-			$pagingString .= '<a href="'. $link .$sign.'paging='.$i.'">'.$i.'</a>';
+			if($type != '') {
+				$pagingString .= '<a href="javascript:" onclick="javascript:loadPage(\''.$i.'\', \''.$type.'\');">'.$i.'</a>';
+			} else {
+				$pagingString .= '<a href="'. $link .$sign.'paging='.$i.'">'.$i.'</a>';
+			}
 		}			
 	}
 	
 	if ($pageNum < $totalPages ) {
 		$nePage = $pageNum + 1;
-		$pagingString .= '<a href="'. $link .$sign.'paging='. $nePage .'" >Next ></a>';
-		$pagingString .= '<a href="'. $link .$sign.'paging='. $totalPages .'" >Last >></a>';
+		if($type != '') {
+			$pagingString .= '<a href="javascript:" onclick="javascript:loadPage(\''.$nePage.'\', \''.$type.'\');">Next ></a>';
+			$pagingString .= '<a href="javascript:" onclick="javascript:loadPage(\''.$totalPages.'\', \''.$type.'\');">Last >></a>';
+		} else {
+			$pagingString .= '<a href="'. $link .$sign.'paging='. $nePage .'" >Next ></a>';
+			$pagingString .= '<a href="'. $link .$sign.'paging='. $totalPages .'" >Last >></a>';
+		}
 	} else {
 		$pagingString .= '<span class="disabled">Next ></span>';
 		$pagingString .= '<span class="disabled">Last >></span>';		
@@ -485,7 +500,7 @@ function getAnswer($ansID) {
 }
 
 function getQuestionsPayment() {
-	$sql = "SELECT p.*, DATE_FORMAT(p.dated, '%d %b, %Y') as dated, q.id as qID, q.caption as qTitle, bu.id as byUserID, CONCAT(bu.fName,' ',bu.lName) as byUserName, bu.avatar as byUserAvatar, tu.id as toUserID, CONCAT(tu.fName,' ',tu.lName) as toUserName, tu.avatar as toUserAvatar, qa.answer as answer FROM `".DB_PREFIX."purchases` p LEFT JOIN `".DB_PREFIX."question_answers` qa ON(p.itemID=qa.id) LEFT JOIN `".DB_PREFIX."questions` q ON(qa.questionID=q.id) LEFT JOIN `".DB_PREFIX."users` bu ON(p.userID=bu.id) LEFT JOIN `".DB_PREFIX."users` tu ON(p.toUserID=tu.id) WHERE p.itemType='question' ORDER BY p.id ASC";
+	$sql = "SELECT p.*, DATE_FORMAT(p.dated, '%d %b, %Y') as dated, q.id as qID, q.caption as qTitle, bu.id as byUserID, CONCAT(bu.fName,' ',bu.lName) as byUserName, bu.avatar as byUserAvatar, tu.id as toUserID, CONCAT(tu.fName,' ',tu.lName) as toUserName, tu.avatar as toUserAvatar, qa.answer as answer FROM `".DB_PREFIX."purchases` p LEFT JOIN `".DB_PREFIX."question_answers` qa ON(p.itemID=qa.id) LEFT JOIN `".DB_PREFIX."questions` q ON(qa.questionID=q.id) LEFT JOIN `".DB_PREFIX."users` bu ON(p.userID=bu.id) LEFT JOIN `".DB_PREFIX."users` tu ON(p.toUserID=tu.id) WHERE p.itemType='question' ORDER BY p.id DESC";
 	$results = get_rows($sql);
 	if(!empty($results)) {
 		$data = array();
@@ -493,6 +508,193 @@ function getQuestionsPayment() {
 			$data[ $result->itemID ][] = $result;
 		}
 		
+		list($data, $paging) = generatePagingForArray($data);
+		return array($data,$paging);
+	}
+}
+
+function getQuestionsPaymentTemplate() { ?>
+	<table id="rounded-corner">
+		<thead>
+			<tr>
+				<th scope="col" class="rounded-company"></th>
+				<th class="rounded" scope="col">Question (Posted by)</th>
+				<th class="rounded" scope="col">Price Paid</th>
+				<th class="rounded" scope="col">Payment Status</th>
+				<th class="rounded" scope="col">Date</th>
+				<th class="rounded-q4 actions" scope="col">Actions</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<?php
+			list($results,$paging) = getQuestionsPayment();
+			if(!empty($results)) {
+				foreach($results as $result) {
+					if(!empty($result)) { ?>
+						<tr>
+							<td></td>
+							<td><?php echo $result[0]->qTitle ."<br />(". $result[0]->byUserName .")"; ?></td>
+						
+							<td>
+								<?php $total = 0; foreach($result as $data) { ?>
+										<?php $total += $data->price; ?>
+								<?php } echo "$".$total; ?>
+							</td>
+						
+							<td>
+								<?php if($data->active) {
+									echo 'Success';
+								} else {
+									echo 'Failed';
+								} ?>
+							</td>
+							<td><?php echo $data->dated; ?></td>
+							<td class="actions"><a href="javascript:" onclick="javascript: expandme('<?php echo $result[0]->id; ?>');"><img src="images/plus-icon.png" alt="" border="0" /></a></td>
+						</tr>
+					
+						<tr class="hidePartentTR">
+							<td colspan="6" style="border-bottom:2px dotted #60C8F2;">
+								<table width="95%" border="0" class="rounded-corner-expand hide" id="hide_<?php echo $result[0]->id; ?>" style="margin:0 auto;">
+									<tr>
+										<th class="rounded" scope="col" width="560">Approved Answers</th>
+										<th class="rounded" scope="col" width="150">Given By</th>
+										<th class="rounded" scope="col" width="100">Price paid</th>
+									</tr>
+								
+									<?php foreach($result as $data) { ?>
+										<tr>
+											<td><?php echo $data->answer; ?></td>
+											<td><?php echo $data->toUserName; ?></td>
+											<td><?php echo "<strong>$". $data->price ."</strong>"; ?></td>
+										</tr>
+									<?php } ?>
+								</table>
+							</td>
+						</tr>
+					<?php }
+				}
+			}
+			?>
+		</tbody>
+	</table>
+	<?php echo $paging['pagingString']; ?>
+<?php }
+
+function getNotesPayment() {
+	$sql = "SELECT p.*, DATE_FORMAT(p.dated, '%d %b, %Y') as dated, n.docName as nDocName, bu.id as byUserID, CONCAT(bu.fName,' ',bu.lName) as byUserName, bu.avatar as byUserAvatar, tu.id as toUserID, CONCAT(tu.fName,' ',tu.lName) as toUserName, tu.avatar as toUserAvatar FROM `".DB_PREFIX."purchases` p LEFT JOIN `".DB_PREFIX."notices` n ON(p.itemID=n.id) LEFT JOIN `".DB_PREFIX."users` bu ON(p.userID=bu.id) LEFT JOIN `".DB_PREFIX."users` tu ON(p.toUserID=tu.id) WHERE p.itemType='notice' ORDER BY p.id DESC";
+	$paging = array();
+	$paging = generatePaging($sql, 'notesPayment');
+	$sql = $sql . $paging['limit'];
+	$data = get_rows($sql);
+	return array($data,$paging);
+}
+
+function getNotesPaymentTemplate() { ?>
+	<table id="rounded-corner">
+		<thead>
+			<tr>
+				<th scope="col" class="rounded-company"></th>
+				<th class="rounded" scope="col" style="width:170px;">Notes</th>
+				<th class="rounded" scope="col">Purchased by</th>
+				<th class="rounded" scope="col">Paid to</th>
+				<th class="rounded" scope="col">Price Paid</th>
+				<th class="rounded" scope="col">Payment Status</th>
+				<th class="rounded" scope="col">Date</th>
+			</tr>
+		</thead>
+	
+		<tbody>
+			<?php
+			list($results,$paging) = getNotesPayment();
+			if(!empty($results)) {
+				foreach($results as $result) {
+					if(!empty($result)) { ?>
+						<tr>
+							<td></td>
+							<td><?php echo $result->nDocName; ?></td>
+							<td><?php echo $result->byUserName; ?></td>
+							<td><?php echo $result->toUserName; ?></td>
+							<td><?php echo "$".$result->price; ?></td>
+												
+							<td>
+								<?php if($result->active) {
+									echo 'Success';
+								} else {
+									echo 'Failed';
+								} ?>
+							</td>
+						
+							<td><?php echo $result->dated; ?></td>
+						</tr>
+					<?php }
+				}
+			}
+			?>
+		</tbody>
+	</table>
+	<?php echo $paging['pagingString'];
+}
+
+function generatePagingForArray($array) {
+	define('MAX_RECORD_PER_PAGE', 5);
+	$pageNum = isset($_GET['paging']) ? $_GET['paging'] : 1;
+	
+	$paging = array();
+	if(!empty($array) && sizeof($array) > MAX_RECORD_PER_PAGE) {
+		$returnArray = array();
+		$paging['pagingString'] .= '<div class="pagination">';
+		$count = 0;
+		foreach($array as $k=>$result) {
+			if(!empty($result)) {
+				$count = $count + 1;
+				
+				if( $count < ($pageNum * MAX_RECORD_PER_PAGE) ) {
+					//continue;
+				} else if($count >= ( ($pageNum + 1) * MAX_RECORD_PER_PAGE)) {
+					//break;
+				} else {
+					$returnArray[$k] = $result;
+				}
+				
+				if($count == $pageNum) {
+					$paging['pagingString'] .= '<span class="current">'.$count.'</span>';
+				} else {
+					$paging['pagingString'] .= '<a onclick="javascript:loadPage(\''.$count.'\', \'questionsPayment\');" href="javascript:">'.$count.'</a>';
+				}
+			}
+		}
+		$paging['pagingString'] .= '</div>';
+		return array($returnArray, $paging);
+	} else {
+		return array($array, $paging);
+	}
+}
+
+function get_country_id($countryName) {
+	$sql = "SELECT * FROM `".DB_PREFIX."countries` WHERE name='$countryName'";
+	$data = get_field('id', $sql);
+	return $data;
+}
+
+function get_doc($docID) {
+	$sql = "
+		SELECT
+			n.*, s.name as stateName, sc.name as schoolName, d.name as deptName, c.name as courseName, p.name as profName, dt.name as docTypeName
+		FROM
+			`".DB_PREFIX."notices` n
+				LEFT JOIN `".DB_PREFIX."states` s ON(n.stateID=s.id)
+				LEFT JOIN `".DB_PREFIX."schools` sc ON(n.schoolID=sc.id)
+				LEFT JOIN `".DB_PREFIX."departments` d ON(n.deptID=d.id)
+				LEFT JOIN `".DB_PREFIX."courses` c ON(n.deptID=c.id)
+				LEFT JOIN `".DB_PREFIX."professors` p ON(n.deptID=p.id)
+				LEFT JOIN `".DB_PREFIX."docTypes` dt ON(n.docTypeID=dt.id)
+		WHERE
+			n.id='$docID'
+	";
+	
+	$data = get_row($sql);
+	if(!empty($data)) {
 		return $data;
 	}
 }

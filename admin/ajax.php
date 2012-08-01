@@ -84,6 +84,44 @@ switch($action) {
 		}
 		break;
 		
+	case 'professorList':
+		$courseID = $_REQUEST['courseID'];
+		$professorID = $_REQUEST['professorID'];
+		
+		echo '<option value="">--Select Professor--</option>';
+		$sql = "SELECT * FROM `".DB_PREFIX."professors` WHERE `courseID`='$courseID' ORDER BY `name`";
+		$res = mysql_query($sql);
+
+		if(mysql_num_rows($res) > 0) {
+			while($professor = mysql_fetch_array($res)) {
+				$selected = '';
+				if($professor['id'] == $professorID) {
+					$selected = 'selected="selected"';
+				}
+				echo '<option value="'.$professor['id'].'" '.$selected.'>'.$professor['name'].'</option>';
+			}
+		}
+		break;
+		
+	case 'docTypeList':
+		$docTypeID = $_REQUEST['docTypeID'];
+		
+		echo '<option value="">--Select Doc Type--</option>';
+		$sql = "SELECT * FROM `".DB_PREFIX."docTypes` ORDER BY `name`";
+		$res = mysql_query($sql);
+
+		if(mysql_num_rows($res) > 0) {
+			while($docType = mysql_fetch_array($res)) {
+				$selected = '';
+				if($docType['id'] == $docTypeID) {
+					$selected = 'selected="selected"';
+				}
+				echo '<option value="'.$docType['id'].'" '.$selected.'>'.$docType['name'].'</option>';
+			}
+		}
+		break;
+		
+		
 	case 'delComment':
 		$commentID = $_REQUEST['commentID'];
 		echo delComment($commentID);
@@ -92,6 +130,17 @@ switch($action) {
 	case 'delAnswer':
 		$ansID = $_REQUEST['ansID'];
 		echo delAnswer($ansID);
+		break;
+		
+	case 'loadPage':
+		$pageNum = $_REQUEST['pageNum'];
+		$pageType = $_REQUEST['pageType'];
+		
+		if($pageType == 'questionsPayment') {
+			getQuestionsPaymentTemplate();
+		} else if($pageType == 'notesPayment') {
+			getNotesPaymentTemplate();
+		}
 		break;
 }
 ?>

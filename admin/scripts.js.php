@@ -2,6 +2,8 @@
 jQuery(document).ready(function() {
 	stateList();
 	addressStateList();
+	professorList();
+	docTypeList();
 	
 	jQuery('#address_country').change(function() {
 		addressStateList();
@@ -21,6 +23,10 @@ jQuery(document).ready(function() {
 	
 	jQuery('#deptID').change(function() {
 		courseList();
+	});
+	
+	jQuery('#courseID').change(function() {
+		professorList();
 	});
 });
 
@@ -42,7 +48,11 @@ function addressStateList() {
 
 function stateList() {
 	if(jQuery('#stateID').length) {
-		var countryID = jQuery('#countryID').val();
+		if(jQuery('#countryID').length) {
+			var countryID = jQuery('#countryID').val();
+		} else {
+			var countryID = '<?php echo get_country_id(DEFAULT_COUNTRY); ?>';
+		}
 		jQuery.ajax({
 			type: "POST",
 			url: "ajax.php",
@@ -104,6 +114,38 @@ function courseList() {
 			success: function(response){
 				response = jQuery.trim(response);
 				jQuery('#courseID').html(response);
+				professorList();
+			}
+		});
+	}
+}
+
+function professorList(selectedID) {
+	if(jQuery('#professorID').length) {
+		var courseID = jQuery('#courseID').val();
+		var professorID = '<?php echo $professorID; ?>';
+		jQuery.ajax({
+			type: "POST",
+			url: "ajax.php",
+			data: "professorID="+professorID+"&courseID="+courseID+"&selectedID="+selectedID+"&action=professorList",
+			success: function(response){
+				response = jQuery.trim(response);
+				jQuery('#professorID').html(response);
+			}
+		});
+	}
+}
+
+function docTypeList(selectedID) {
+	if(jQuery('#docTypeID').length) {
+		var docTypeID = '<?php echo $docTypeID; ?>';
+		jQuery.ajax({
+			type: "POST",
+			url: "ajax.php",
+			data: "docTypeID="+docTypeID+"&selectedID="+selectedID+"&action=docTypeList",
+			success: function(response){
+				response = jQuery.trim(response);
+				jQuery('#docTypeID').html(response);
 			}
 		});
 	}

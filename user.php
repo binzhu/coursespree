@@ -34,7 +34,7 @@ switch($type) {
 		break;
 	
 	case 'payment':
-		require_once 'user/questions/payment.php';
+		require_once 'user/payments/payment.php';
 		break;
 		
 	case 'subscriber':
