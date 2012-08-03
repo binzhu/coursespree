@@ -16,6 +16,7 @@ $upload_path = '../../uploads/docs/'; //Set upload path
 $prevpath = $upload_path.'preview/'; 
 //$coverImage = basename($filename,$ext).".jpg";
 $coverImage = addslashes(time()."_".basename($filename,$ext).".jpg");
+$coverImage = str_replace(" ","_",$coverImage);
 
 // Check if the filetype is allowed, if not DIE and inform the user.
 if(!in_array($ext,$allowed_filetypes)) {
@@ -33,11 +34,11 @@ if(!is_writable($upload_path)) {
 if(move_uploaded_file($_FILES['userfile']['tmp_name'],$upload_path . $file_strip)) {
 	echo '<div class="success"><input type="text" name="doc" id="doc" value="'.$file_strip.'" readonly></div>'; // It worked.
 	
-	//create cover image if pdf is uploaded
-	if ($ext == '.pdf' ){
-		 exec("convert ".$upload_path.$file_strip."[0] ".$prevpath.$coverImage);
-		 echo '<div class="success"><input type="text" name="coverimage" id="coverimage" value="'.$coverImage.'" readonly></div>'; // It worked.
-	}
+	//create cover image for supported file types
+	
+	exec("convert ".$upload_path.$file_strip."[0] ".$prevpath.$coverImage);
+	echo '<div class="success"><input type="hidden" name="coverimage" id="coverimage" value="'.$coverImage.'" readonly></div>'; // It worked.
+	
 	
 } else {
 	echo '<div class="error">'. $file_strip .' was not uploaded.  Please try again.</div>'; // It failed :(.
