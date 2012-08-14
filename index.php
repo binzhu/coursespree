@@ -4,7 +4,7 @@
 	<div class="clear"></div>
 	<div class="actions">
 <div class="splash">
-		<p><span>CourseSpree's</span> mission is to provide college students a more practical way to succeed academically while earning an income</p>
+		<p>We help students succeed academically, while earning an income</p>
 		
 
 		</div>

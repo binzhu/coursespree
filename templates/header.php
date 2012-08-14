@@ -92,7 +92,7 @@ if($password == '') {
 <li><a href="user.php?type=purchases">Buy Notes</a></li>
 <li><a href="user.php?type=sell">Sell Notes</a></li>
 <li><a href="questions.php">HomeWork Help</a></li>
-<li><a href="virtual-tutoring">E-Learning</a></li>
+<li><a href="http://www.coursespree.info/">Tutoring</a></li>
 <li><a href="http://danishnadeem.brandyourself.com/">About Us</a></li>
 
 

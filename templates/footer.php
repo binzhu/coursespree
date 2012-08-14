@@ -11,7 +11,7 @@
                     <ul class="social">
                         <li><a href="http://www.facebook.com/CourseSpree">Facebook</a></li>
                         <li class="twitter"><a href="http://twitter.com/#!/CourseSpree">Twitter</a></li>
-                        <li class="in"><a href="#">Linkedin</a></li>
+                        
                     </ul>
                 </div>
             </div> <!-- #content -->

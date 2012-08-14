@@ -191,13 +191,7 @@ html body{
     top:5px;
 
 }
-#content .splash{
-    background: url("../images/splash.png") no-repeat 0px 0px transparent;   
-    width: 940px;
-    height: 351px;
-    margin-top: 10px;
-    padding: 10px;
-}
+
 #content .splash img{
     width: 22%;
     float: left;
@@ -207,14 +201,21 @@ html body{
     color: #f58b24;
 }
 #content .splash p{
+    margin-top: 20px;
+    padding-top: 20px;
+    background: white;
     color: #031E34;
-    float: right;
+    text-align: center;
     font-family: "Century Gothic";
     font-size: 24px;
     line-height: 36px;
     margin-right: 30px;
-    margin-top: 8%;
-    width: 70%;
+    height: 60px;
+    width: 885px;
+    margin-left: 30px;
+    border-radius: 10px;
+    font-family: arial;
+    box-shadow:inset 0 0 15px #000000;
 
 }
 #content .splash a{
