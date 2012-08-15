@@ -42,7 +42,7 @@ if(isset($_POST['loginVar'])) {
 	$dept = filterMe($_POST['dept']);
 
 	
-	$active = '0';
+	$active = '1';//disable email confirmation
 	$dated = date('Y-m-d H:i:s');
 	
 	if(isset($_POST['acceptTerms'])) {
@@ -106,7 +106,8 @@ if(isset($_POST['loginVar'])) {
 				/************* Insert user school info ***********/
 				
 				/************* Send Confirmation Mail ***********/
-				$mail = sendConfirmMail($userID);
+				//$mail = sendConfirmMail($userID);
+				//email smtp need fix
 				/************* Send Confirmation Mail ***********/
 				
 				$_SESSION['unActiveUserID'] = $userID;

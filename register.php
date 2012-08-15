@@ -25,8 +25,8 @@ if(isUserLoggedin()) {
 	                	?>
 						<form method="post" action="" name="login">
 		                	<input type="hidden" value="1" id="loginVar" name="loginVar">
-		                	
-		                	<?php if(isset($_SESSION['unActiveUserID']) && $_SESSION['unActiveUserID'] > 0) { ?>
+		                	<!--disabled email notification until fix email-->
+		                	<?php if( false && isset($_SESSION['unActiveUserID']) && $_SESSION['unActiveUserID'] > 0) { ?>
 				            	A confirmation mail has been sent to your shared mail. Please follow the instructions and get started.<br />
 				            	In case if you haven't received the mail, Please request a <a href="register.php?type=login&resend=1">resend link</a> or <a href="#">contact</a> admin.<br /><br />
 				            <?php } ?>
